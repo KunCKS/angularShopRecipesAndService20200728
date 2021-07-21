@@ -1,1 +1,19 @@
-<p>recipes-item works!</p>
+<a
+  style="cursor: pointer;"
+  class="list-group-item d-flex"
+  [routerLink]="[index]"
+  routerLinkActive="active"
+>
+  <div class="mr-auto">
+    <h4 class="list-group-item-heading">{{ RecipeData.name }}</h4>
+    <p class="list-group-item-text">{{ RecipeData.description }}</p>
+  </div>
+  <div>
+    <img
+      [src]="RecipeData.imagePath"
+      alt="{{ RecipeData.name }}"
+      class="img-fluid"
+      style="max-height: 50px;"
+    />
+  </div>
+</a>

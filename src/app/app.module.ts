@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -9,11 +10,28 @@ import { RecipesDetailComponent } from './recipes/recipes-detail/recipes-detail.
 import { RecipesItemComponent } from './recipes/recipes-list/recipes-item/recipes-item.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
+import { dropDownMenu } from './shared/dropdownMenu.directive';
+import { shoppingListService } from './shoppingList.service';
+import { AppRoutingModule } from './app-routing.module';
+import { RecipesStartComponent } from './recipes/recipes-start/recipes-start.component';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, RecipesComponent, RecipesListComponent, RecipesDetailComponent, RecipesItemComponent, ShoppingListComponent, ShoppingEditComponent],
-  imports: [BrowserModule],
-  providers: [],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    RecipesComponent,
+    RecipesListComponent,
+    RecipesDetailComponent,
+    RecipesItemComponent,
+    ShoppingListComponent,
+    ShoppingEditComponent,
+    dropDownMenu,
+    RecipesStartComponent,
+    RecipeEditComponent,
+  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  providers: [shoppingListService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

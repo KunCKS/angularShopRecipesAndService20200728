@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { RecipesService } from '../../../recipes.service';
+import { Ingredients } from 'src/app/shared/Ingredient.model';
+import { Recipe } from '../../recipes.model';
 @Component({
   selector: 'app-recipes-item',
   templateUrl: './recipes-item.component.html',
-  styleUrls: ['./recipes-item.component.scss']
+  styleUrls: ['./recipes-item.component.scss'],
 })
 export class RecipesItemComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  @Input('Recipe') RecipeData: Recipe;
+  @Input('index') index: string;
+  ngOnInit(): void {}
 }
